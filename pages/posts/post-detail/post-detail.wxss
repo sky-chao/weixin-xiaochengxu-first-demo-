@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-detail-banner {
+  width: 100%;
+  height: 460rpx;
+}
+
+.author {
+  flex-direction: row;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  align-items: center;
+}
+
+.author-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  vertical-align: middle;
+}
+
+.author-name {
+}
+
+.Publish, .Publish-date, .author-name {
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.Publish-date {
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 400;
+  margin-left: 40rpx;
+  margin-top: 30rpx;
+  color: #4b556c;
+  letter-spacing: 2px;
+}
+
+.Handle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  vertical-align: middle;
+  position: relative;
+  margin: 0 30rpx;
+}
+
+.Collection {
+  margin: 0 30rpx;
+}
+
+.Collection, .share {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.line {
+  position: absolute;
+  top: 45rpx;
+  width: 100%;
+  border-top: 1px solid #eee;
+  z-index: -1;
+}
+
+.content {
+  color: #999;
+  margin: 0 30rpx 0;
+  line-height: 44rpx;
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+}
