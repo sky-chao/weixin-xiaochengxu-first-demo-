@@ -1,5 +1,6 @@
 <view class="container">
    <image  class="post-detail-banner" src="{{lists.headImgSrc}}"></image>
+   <image  catchtap="onmiusictap" class="music" src="{{isplaymusic ?'../../../images/music/music-stop.png' : '../../../images/music/music-start.png'}}"></image>
    <view class="author" >
       <image  class="author-avatar" src="../../../images/avatar/2.png"></image>
       <text class="author-name" >{{lists.author}}</text>
@@ -11,7 +12,7 @@
       <view>
         <image wx:if="{{Collection}}" class="Collection" catchtap="onCollection" src="../../../images/icon/collection.png"></image> 
         <image wx:else class="Collection" catchtap="onCollection" src="../../../images/icon/collection-anti.png"></image> 
-        <image class="share" src="../../../images/icon/share.png"></image> 
+        <image catchtap="onsharetap" class="share" src="../../../images/icon/share.png"></image> 
       </view>
       <view class="line"></view>
    </view>
