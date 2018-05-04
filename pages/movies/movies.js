@@ -1,6 +1,10 @@
 import starArray from "../../utils/utils.js";
 var app = getApp();
 Page({
+    data:{
+        containerShow: true,
+        searchPanelShow: false,
+    },
     onLoad(option) {
         var wellReceived = app.globalData.doubanBase + "/v2/movie/in_theaters" + "? start=0&count=3";
         var Soon_to_be_shown = app.globalData.doubanBase + "/v2/movie/coming_soon" + "? start=0&count=3";
@@ -57,6 +61,19 @@ Page({
         var movieType = e.currentTarget.dataset.movietype;//线获取事件绑定组建上data的数据，再以url参数传递数据至子页面
         wx.navigateTo({
             url:"more-movie/more-movie?movieType="+movieType
+        })
+    },
+    //搜索框获取焦点时
+    onBindfocus(){
+        this.setData({
+            containerShow: false,
+            searchPanelShow: true,
+        })
+    },
+    onCancelImgTap(){
+        this.setData({
+            containerShow: true,
+            searchPanelShow: false,
         })
     }
 })

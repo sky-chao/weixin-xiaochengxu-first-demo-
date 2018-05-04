@@ -1,3 +1,5 @@
 {
-    "enablePullDownRefresh":true
+    "onReachBottomDistance":true,
+    "enablePullDownRefresh":true,
+    "backgroundColor":"#eee"
 }

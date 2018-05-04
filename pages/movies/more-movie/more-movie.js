@@ -71,7 +71,8 @@ Page({
         })
     },
     //上滑至页面底部加载数据
-    onscrolltolower(e){
+    onReachBottom(e){
+    // onscrolltolower(e){
         var moreUrl = this.data.dataUrl + "?start="+this.data.getstartCount+"&count=20";
         utils.http(moreUrl, this.getMovieListData);
         wx.showNavigationBarLoading()//打开Loading
@@ -82,7 +83,7 @@ Page({
         //消除进入请求回调函数getMovieListData中，if 判断造成的数据累加代码段问题
         this.data.dataUrl={};
         this.data.isEmpty=true;
-        
+
         utils.http(moreUrl, this.getMovieListData);
         wx.showNavigationBarLoading();//打开Loading
         wx.stopPullDownRefresh()//停止当前页面下拉刷新。

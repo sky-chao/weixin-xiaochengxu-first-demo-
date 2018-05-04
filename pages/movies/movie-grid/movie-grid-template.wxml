@@ -1,10 +1,12 @@
 <import src="../movie/movie-template.wxml" />
 <template name="movegridtemplate">
-    <scroll-view class="movie-grid-cantainer" scroll-y="true" scroll-x="false" bindscrolltolower="onscrolltolower">
+    <!-- <scroll-view class="movie-grid-cantainer" scroll-y="true" scroll-x="false" bindscrolltolower="onscrolltolower"> -->
+    <view class="movie-grid-cantainer">
         <block wx:for="{{movies}}" wx:for-item="item" wx:key="index">
             <view class="movie-Item-cantainer">
                 <template is="movestyle" data="{{...item}}" />
             </view>
         </block>
-    </scroll-view>
+    </view>
+    <!-- </scroll-view> -->
 </template>
