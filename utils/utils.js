@@ -1,3 +1,19 @@
+//http请求数据的方法
+function http(url,callback){
+    wx.request({
+        url: url,
+        header: {
+            "Content-Type": "json"
+        },
+        success(res) {
+            callback(res.data)
+        },
+        fail(res) {
+            console.log(res.errMsg)
+        }
+    })
+}
+//获取星星数组的处理方法
 function convertToStarsArray(stars){
     var num = stars.toString().substring(0,1);
     var star=[];
@@ -11,5 +27,6 @@ function convertToStarsArray(stars){
     return star;
 }
 module.exports={
-    convertToStarsArray: convertToStarsArray
+    convertToStarsArray: convertToStarsArray,
+    http: http
 }

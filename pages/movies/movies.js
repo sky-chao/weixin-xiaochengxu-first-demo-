@@ -10,17 +10,17 @@ Page({
         this.getResources(topList, "top", "豆瓣Top250");
     },
     //发请求的公共方法
-    getResources(url, key, MovieType){
-        var that=this;
+    getResources(url, key, MovieType) {
+        var that = this;
         wx.request({
             url: url,
             header: {
                 "Content-Type": "json"
             },
             success(res) {
-                that.getMovieListData(res.data.subjects,key,MovieType);
+                that.getMovieListData(res.data.subjects, key, MovieType);
             },
-            fail(res){
+            fail(res) {
                 console.log(res.errMsg)
             }
         })
@@ -52,5 +52,12 @@ Page({
             dataList
         )
         console.log(dataList);
+    },
+    //加载更多电影（跳转到新的页面）
+    onMoreTap(e){
+        var movieType = e.currentTarget.dataset.movietype;//线获取事件绑定组建上data的数据，再以url参数传递数据至子页面
+        wx.navigateTo({
+            url:"more-movie/more-movie?movieType="+movieType
+        })
     }
 })
