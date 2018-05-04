@@ -1,0 +1,19 @@
+.star-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.star-comment text {
+    color:#666;
+}
+.stars-container {
+    display: flex;
+    flex-direction: row;
+    margin-right:10rpx;
+}
+
+.stars-container image {
+    width: 17rpx;
+    height: 17rpx;
+    padding-right:10rpx;
+}

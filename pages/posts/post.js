@@ -10,5 +10,11 @@ Page({
     wx.navigateTo({
       url: 'post-detail/post-detail?id='+postId
     })
+  },
+  onswipertap(e){
+      var postswiperId = e.target.dataset.postid;
+      wx.navigateTo({
+          url: 'post-detail/post-detail?id=' + postswiperId
+      })
   }
 })

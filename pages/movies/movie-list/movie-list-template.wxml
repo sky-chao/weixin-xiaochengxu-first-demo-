@@ -1,0 +1,17 @@
+<import src="../movie/movie-template.wxml" />
+<template name="moveList">
+    <view class="movieList-container">
+        <view class="movieList-nav">
+            <text class="movieList-navTitle">{{MovieType}}</text>
+            <view class="movieList-navMore">
+                <text>更多</text>
+                <image src="/images/icon/arrow-right.png"></image>
+            </view>
+        </view>
+        <view class="movieList-item">
+            <block wx:for="{{movies}}" wx:for-item="item" wx:key="index">
+                <template is="movestyle" data="{{...item}}"/>
+            </block>
+        </view>
+    </view>
+</template>
