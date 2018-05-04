@@ -59,7 +59,10 @@ Page({
         this.setData({
             movies: totalMovies
         });
+        //累加，每次请求参数start起始开始的数
         this.data.getstartCount+=20;
+        //关闭加载Loading
+        wx.hideNavigationBarLoading()
     },
     //设置窗口头显示的title
     onReady(){
@@ -67,9 +70,21 @@ Page({
             title: this.data.movieTitle
         })
     },
-    //下滑至页面底部加载数据
+    //上滑至页面底部加载数据
     onscrolltolower(e){
         var moreUrl = this.data.dataUrl + "?start="+this.data.getstartCount+"&count=20";
         utils.http(moreUrl, this.getMovieListData);
+        wx.showNavigationBarLoading()//打开Loading
+    },
+    //下滑刷新（只要20条数据）
+    onPullDownRefresh(e){
+        var moreUrl = this.data.dataUrl + "?start=0&count=20";
+        //消除进入请求回调函数getMovieListData中，if 判断造成的数据累加代码段问题
+        this.data.dataUrl={};
+        this.data.isEmpty=true;
+        
+        utils.http(moreUrl, this.getMovieListData);
+        wx.showNavigationBarLoading();//打开Loading
+        wx.stopPullDownRefresh()//停止当前页面下拉刷新。
     }
 })
