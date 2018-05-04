@@ -51,7 +51,6 @@ Page({
         this.setData(
             dataList
         )
-        console.log(dataList);
     },
     //加载更多电影（跳转到新的页面）
     onMoreTap(e){

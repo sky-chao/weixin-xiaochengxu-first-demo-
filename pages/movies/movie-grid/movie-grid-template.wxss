@@ -1,1 +1,9 @@
-/* pages/movies/movie-grid/movie-grid-template.wxss */
+@import "../movie/movie-template.wxss";
+.movie-grid-cantainer{
+    padding:30rpx 0 30rpx 9rpx;
+    height:1330rpx;
+}
+.movie-Item-cantainer{
+    float:left;
+    margin-bottom:50rpx;
+}
