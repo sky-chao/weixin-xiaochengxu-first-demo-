@@ -5,7 +5,8 @@ Page({
         movies:{},
         movieTitle:"",
         dataUrl:"",
-        getstartCount:0
+        getstartCount:0,
+        isEmpty:true
     },
     onLoad: function (options) {
         var movieTitle = options.movieType;
@@ -47,8 +48,16 @@ Page({
             };
             movies.push(temp);
         }
+        //处理每次请求数据累加20条
+        var totalMovies={};
+        if (!this.data.isEmpty){
+            totalMovies=this.data.movies.concat(movies)
+        }else{
+            totalMovies=movies;
+            this.data.isEmpty=false;
+        }
         this.setData({
-            movies: movies
+            movies: totalMovies
         });
         this.data.getstartCount+=20;
     },
