@@ -1,0 +1,128 @@
+@import "../stars/star-template.wxss";
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.bgImg {
+    width: 100%;
+    height: 320rpx;
+    -webkit-filter: blur(20px);
+}
+
+.movie-header {
+    padding-top: 40rpx;
+    padding-left: 40rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+}
+
+.movie-title {
+    font-weight: bold;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+.countryDate {
+    display: block;
+    font-size: 36rpx;
+    line-height: 100rpx;
+    letter-spacing: 2px;
+}
+
+.likes {
+    font-size: 24rpx;
+    line-height: 120rpx;
+}
+
+.num {
+    color: red;
+    margin-right: 20rpx;
+}
+
+.Company {
+    color: #666;
+    margin-right: 40rpx;
+}
+
+.movie-Image {
+    position: absolute;
+    right: 30rpx;
+    top: 160rpx;
+    height: 238rpx;
+    width: 175rpx;
+}
+
+.movieInfos {
+    /* width: 100%; */
+    padding-top: 40rpx;
+    padding-left: 40rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.orignName {
+    line-height: 120rpx;
+    color: #333;
+}
+
+.infoRow {
+    line-height: 50rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.infoType {
+    color: #999;
+    padding-right: 20rpx;
+}
+
+.hr {
+    width: 100%;
+    border-top: 1px solid #999;
+    margin-top: 40rpx;
+}
+
+.Synopsis {
+    padding-right: 40rpx;
+}
+
+.Synopsis,
+.Films {
+    padding-top: 60rpx;
+    padding-left: 40rpx;
+}
+
+.SynopsisTitle,
+.Film-title {
+    color: #999;
+    display: block;
+    margin-bottom: 40rpx;
+}
+
+.SynopsisContent {
+    color: #666;
+    text-indent: 2em;
+    letter-spacing: 1px;
+}
+
+.filmListInfo {
+    white-space: nowrap;
+}
+
+.filmListInfoContainer {
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 50rpx;
+    margin-right: 40rpx;
+    width: 170rpx;
+    text-align: center;
+    white-space: normal;
+}
+
+.filmListInfoImg {
+    width: 170rpx;
+    height: 210rpx;
+}

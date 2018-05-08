@@ -47,6 +47,13 @@ Page({
             app.globalData.g_isplaymusic= false;
             app.globalData.g_isplaymusicId = null;//监听暂停时：没有播放的歌曲
         })//监听音乐暂停。
+        wx.onBackgroundAudioStop(function () {
+            that.setData({
+                isplaymusic: false
+            })
+            app.globalData.g_isplaymusic = false;
+            app.globalData.g_isplaymusicId = null;
+        })//监听停止时
 
 
         //如果初始全局音乐播放状态为true 且是监听到的那个Id，就改变此页面的音乐初始状态,在局部改变状态时，通知全局（监听有改变就改动）

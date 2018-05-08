@@ -4,6 +4,10 @@ Page({
     data:{
         containerShow: true,
         searchPanelShow: false,
+        soon:{},
+        top:{},
+        well:{},
+        searchMovie:{}
     },
     onLoad(option) {
         var wellReceived = app.globalData.doubanBase + "/v2/movie/in_theaters" + "? start=0&count=3";
@@ -63,6 +67,13 @@ Page({
             url:"more-movie/more-movie?movieType="+movieType
         })
     },
+    //点击跳转到电影详情页(movieId:html通过data-属性传递数据被事件对象e接受，通过url传递到其他页面)
+    onMovietap(e) {
+        var movieId=e.currentTarget.dataset.movieid;
+        wx.navigateTo({
+            url: 'movie-detail/movie-detail?Id=' + movieId
+        })
+    },
     //搜索框获取焦点时
     onBindfocus(){
         this.setData({
@@ -74,6 +85,22 @@ Page({
         this.setData({
             containerShow: true,
             searchPanelShow: false,
+            searchMovie:{}
         })
-    }
+    },
+    searchCommand(e){
+        var text = e.detail.value;
+        var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
+        this.getResources(searchUrl, "searchMovie", "")
+    },
+    //bindchange事件文档没有，如果官方禁止使用此方法，就改成bindblur事件
+    onbindchange(e){
+        this.searchCommand(e)
+    },
+    //失去焦点按回车不管事，所以利用bindchange来弥补
+    onbindblur(e){
+        this.searchCommand(e)
+    },
+    
+    //作业：以后完成下拉刷新，和上拉加载功能。（参考more-movie功能）
 })

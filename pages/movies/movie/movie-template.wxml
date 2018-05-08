@@ -1,6 +1,6 @@
 <import src="../stars/star-template.wxml" />
 <template name="movestyle">
-   <view class="movie-container"> 
+   <view class="movie-container" catchtap="onMovietap" data-movieId="{{id}}"> 
     <image class="movie-img" src="{{image}}"></image>
     <text class="movie-title">{{title}}</text>
     <template is="starts" data="{{average:average,starArray:starArray}}"/>

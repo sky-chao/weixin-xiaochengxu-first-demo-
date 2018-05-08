@@ -2,7 +2,7 @@
 <import src="movie-grid/movie-grid-template.wxml" />
 <view class="search" >
     <icon class="search-img" type="search" size="14" color="#405f80"></icon>
-    <input type="text" placeholder='独孤天下' placeholder-class="placeholder" bindfocus="onBindfocus" bindchange="onbindchange"/>
+    <input type="text" placeholder='独孤天下' placeholder-class="placeholder" bindfocus="onBindfocus" bindchange="onbindchange" bindblur="onbindblur"/>
     <image class="xx-img" wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" bindtap='onCancelImgTap'></image>
 </view>
 <view class="moviesClass-container" wx:if="{{containerShow}}">
@@ -17,6 +17,5 @@
     </view>
 </view>
 <view class="search-pannel" wx:if="{{searchPanelShow}}">
-    <text>haha</text>
-    <template is="movegridtemplate"/>
+    <template is="movegridtemplate" data="{{...searchMovie}}"/>
 </view>

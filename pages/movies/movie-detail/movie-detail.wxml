@@ -1,0 +1,51 @@
+<import src="../stars/star-template.wxml" />
+<view class="container">
+    <image  class="bgImg" src="{{movieInfo.movieImg}}" mode="top"></image>
+    <view class="movie-header" catchtap="onpreviewTap" data-imgShow="{{[movieInfo.movieImg]}}">
+        <text class="movie-title">{{movieInfo.title}}</text>
+        <text class="countryDate">{{movieInfo.country+'.'+movieInfo.year}}</text>
+        <view class="likes">
+             <text class="num">{{movieInfo.wishCount}}</text> 
+             <text class="Company">人喜欢</text>  
+             <text class="num">{{movieInfo.commentCount}}</text>
+             <text class="Company">条评论</text>    
+        </view>
+    </view>
+    <image class="movie-Image" src="{{movieInfo.movieImg}}" catchtap="onpreviewTap" data-imgShow="{{[movieInfo.movieImg]}}"></image>
+    <view class="movieInfos">
+        <text class="orignName">{{movieInfo.originalTitle}}</text>
+        <view class="infoRow">
+            <text class="infoType">评分</text>
+            <template is="starts" data="{{...movieInfo}}"/>
+        </view>
+        <view class="infoRow">
+            <text class="infoType">导演</text>
+            <text>{{movieInfo.director.name}}</text>
+        </view>
+         <view class="infoRow">
+            <text class="infoType">影人</text>
+            <text>{{movieInfo.casts}}</text>
+        </view>
+         <view class="infoRow">
+            <text class="infoType">类型</text>
+            <text>{{movieInfo.generes}}</text>
+        </view>
+    </view>
+    <view class="hr"></view>
+    <view class="Synopsis">
+        <text class="SynopsisTitle">剧情简介</text>
+        <text class="SynopsisContent">{{movieInfo.summary}}</text>
+    </view>
+    <view class="hr"></view>
+    <view class="Films">
+        <text class="Film-title">影人</text>
+        <scroll-view class="filmListInfo" scroll-x="true" style="width:100%">
+            <block wx:for="{{movieInfo.castsInfo}}" wx:for-item="item" wx:key="index">
+                <view class="filmListInfoContainer">
+                    <image class="filmListInfoImg" src="{{item.img}}" />
+                    <text class="filmListInfoName">{{item.name}}</text>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+</view>
